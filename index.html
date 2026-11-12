@@ -7,7 +7,7 @@
 <meta name="description" content="Daniel Espinoza Coello — comunicador. Cobertura de eventos en tiempo real, notas de prensa y boletines, estrategia de comunicación y visibilidad. Cuenca · Quito, Ecuador.">
 <meta property="og:title" content="Daniel Espinoza Coello · Comunicador">
 <meta property="og:description" content="Cobertura de eventos en tiempo real, notas de prensa y boletines, estrategia de comunicación y visibilidad.">
-<meta property="og:image" content="media/foto-parrilla.jpg">
+<meta property="og:image" content="media/foto-parrilla-hero.jpg">
 <meta name="theme-color" content="#121212">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E52322'/><circle cx='50' cy='50' r='17' fill='%23FFE7C9'/></svg>">
 
@@ -42,10 +42,19 @@ strong{font-weight:700;color:#fff}
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:min(94svh,860px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
 .hero-img{position:absolute;inset:0}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:52% 42%;filter:saturate(.92) contrast(1.04)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:62% 56%;filter:saturate(.95) contrast(1.03)}
 .hero-img::after{content:"";position:absolute;inset:0;background:
-   linear-gradient(to right, rgba(18,18,18,.92) 0%, rgba(18,18,18,.62) 34%, rgba(18,18,18,.12) 62%, rgba(18,18,18,.35) 100%),
-   linear-gradient(to top, #121212 1%, rgba(18,18,18,.9) 36%, rgba(18,18,18,.3) 72%, rgba(18,18,18,.6) 100%)}
+   linear-gradient(to right, rgba(18,18,18,.93) 0%, rgba(18,18,18,.72) 26%, rgba(18,18,18,.22) 46%, rgba(18,18,18,0) 60%),
+   linear-gradient(to top, #121212 1%, rgba(18,18,18,.82) 30%, rgba(18,18,18,.18) 66%, rgba(18,18,18,.5) 100%)}
+@media(max-width:860px){
+  .hero-img img{object-position:62% 38%}
+  .hero{min-height:min(96svh,880px)}
+  .hero .lead2{display:none}
+  .hero-in{padding-bottom:34px}
+  .hero .kicker,.hero .role,.hero .lead{text-shadow:0 2px 16px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.75)}
+  .hero .chip{backdrop-filter:blur(6px);background:rgba(18,18,18,.55)}
+  .hero-img::after{background:linear-gradient(to top, #121212 2%, rgba(18,18,18,.93) 46%, rgba(18,18,18,.52) 78%, rgba(18,18,18,.5) 100%)}
+}
 .hero-in{position:relative;width:100%;padding:0 0 46px}
 .hero h1{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(40px,9.2vw,104px);line-height:.88;margin:14px 0 0;color:#fff}
 .hero h1 .dot{color:var(--rojo)}
@@ -263,7 +272,7 @@ section[id]{scroll-margin-top:68px}
 
 <!-- ======================= HERO ======================= -->
 <header class="hero" id="top">
-  <div class="hero-img"><img src="media/foto-parrilla.jpg" alt="Daniel Espinoza en la parrilla de partida del GT Challenge de las Américas, Guyana" fetchpriority="high"></div>
+  <div class="hero-img"><img src="media/foto-parrilla-hero.jpg" alt="Daniel Espinoza en la parrilla de partida del GT Challenge de las Américas, Guyana" fetchpriority="high"></div>
   <div class="hero-in">
     <div class="wrap">
       <p class="kicker">Postulación · Comunicador · Tiempo parcial</p>
