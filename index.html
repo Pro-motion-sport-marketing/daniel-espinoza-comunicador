@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniel Espinoza Coello · Comunicador</title>
+<meta name="description" content="Daniel Espinoza Coello — comunicador. Cobertura de eventos en tiempo real, notas de prensa y boletines, estrategia de comunicación y visibilidad. Cuenca · Quito, Ecuador.">
+<meta property="og:title" content="Daniel Espinoza Coello · Comunicador">
+<meta property="og:description" content="Cobertura de eventos en tiempo real, notas de prensa y boletines, estrategia de comunicación y visibilidad.">
+<meta property="og:image" content="media/foto-parrilla.jpg">
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E52322'/><circle cx='50' cy='50' r='17' fill='%23FFE7C9'/></svg>">
+
+<style>
+@font-face{font-family:'GC Epic Pro';src:url('fonts/GCEpicPro-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Clash Display';src:url('fonts/ClashDisplay-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Clash Display';src:url('fonts/ClashDisplay-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+
+:root{
+  --rojo:#E52322; --crema:#FFE7C9; --tinta:#121212; --papel:#ECE5E0;
+  --bg:#121212; --fg:#F2EEE8; --mute:#9C968D; --line:#2B2A28; --card:#191817;
+  --disp:'GC Epic Pro', 'Clash Display', Impact, sans-serif;
+  --body:'Clash Display', 'Helvetica Neue', system-ui, sans-serif;
+  --gut:16px; --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-weight:500;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+a{color:inherit}
+img,video{max-width:100%;display:block}
+
+h1,h2,h3{margin:0;line-height:1.02;letter-spacing:-.02em}
+.disp{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rojo)}
+.lead{font-size:clamp(18px,2.4vw,22px);line-height:1.5;color:#DED8CF}
+.mute{color:var(--mute)}
+em{font-style:normal;color:var(--crema)}
+strong{font-weight:700;color:#fff}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:min(94svh,860px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:52% 42%;filter:saturate(.92) contrast(1.04)}
+.hero-img::after{content:"";position:absolute;inset:0;background:
+   linear-gradient(to right, rgba(18,18,18,.92) 0%, rgba(18,18,18,.62) 34%, rgba(18,18,18,.12) 62%, rgba(18,18,18,.35) 100%),
+   linear-gradient(to top, #121212 1%, rgba(18,18,18,.9) 36%, rgba(18,18,18,.3) 72%, rgba(18,18,18,.6) 100%)}
+.hero-in{position:relative;width:100%;padding:0 0 46px}
+.hero h1{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(40px,9.2vw,104px);line-height:.88;margin:14px 0 0;color:#fff}
+.hero h1 .dot{color:var(--rojo)}
+.role{margin-top:18px;font-size:clamp(17px,2.2vw,21px);font-weight:700;color:var(--crema);max-width:22ch;line-height:1.28}
+.hero .lead{margin-top:16px;max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{font-size:12.5px;font-weight:700;letter-spacing:.02em;padding:7px 13px;border:1px solid #3A3733;border-radius:99px;background:rgba(255,255,255,.04);color:#E8E2D9}
+.chip.on{background:var(--rojo);border-color:var(--rojo);color:#fff}
+
+/* ---------- secciones ---------- */
+section{padding:78px 0;border-bottom:1px solid var(--line)}
+section.tight{padding:58px 0}
+.head{max-width:66ch;margin-bottom:38px}
+.head h2{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(28px,5.2vw,52px);margin:12px 0 0}
+.head p{margin:16px 0 0}
+
+/* bloque claro */
+.paper{background:var(--papel);color:var(--tinta);border-bottom:none}
+.paper .mute{color:#6A655E}
+.paper strong{color:#000}
+.paper .chip{border-color:#CDC4BA;background:#fff;color:#2A2724}
+.paper .card{background:#fff;border-color:#DDD4C9}
+.paper em{color:var(--rojo)}
+
+/* ---------- requisitos ---------- */
+.req{display:grid;gap:14px}
+.req-row{display:grid;grid-template-columns:1fr;gap:6px;padding:20px;border:1px solid #DDD4C9;border-radius:14px;background:#fff}
+.req-row .ask{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rojo)}
+.req-row .ans{font-size:16.5px;line-height:1.55}
+@media(min-width:820px){
+  .req-row{grid-template-columns:236px 1fr;gap:22px;align-items:start}
+  .req-row .ask{padding-top:3px}
+}
+
+/* ---------- grids de video ---------- */
+.gridv{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:620px){.gridv{grid-template-columns:repeat(3,1fr);gap:16px}}
+.gridh{display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:900px){.gridh{grid-template-columns:repeat(3,1fr)}}
+
+figure.v{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.paper figure.v{background:#fff;border-color:#DDD4C9}
+.vbox{position:relative;background:#000;overflow:hidden}
+.vbox video{width:100%;height:100%;object-fit:cover;background:#000}
+.vert .vbox{aspect-ratio:9/16}
+.horiz .vbox{aspect-ratio:16/9}
+.snd{position:absolute;right:9px;bottom:9px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(10,10,10,.62);color:#fff;font-size:15px;line-height:1;cursor:pointer;backdrop-filter:blur(6px);display:grid;place-items:center}
+.snd:hover{background:var(--rojo)}
+.badge{position:absolute;left:9px;top:9px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--rojo);color:#fff;padding:5px 9px;border-radius:5px}
+figcaption{padding:14px 15px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
+figcaption b{font-size:15.5px;font-weight:700;line-height:1.3}
+figcaption span{font-size:14px;line-height:1.5;color:var(--mute)}
+.paper figcaption span{color:#6A655E}
+.ig{margin-top:auto;padding-top:4px;font-size:13px;font-weight:700;color:var(--rojo);text-decoration:none}
+.ig:hover{text-decoration:underline}
+
+/* ---------- cards ---------- */
+.cards{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{font-size:17px;font-weight:700;letter-spacing:-.01em;margin-bottom:9px;line-height:1.25}
+.card p{margin:0;font-size:15px;line-height:1.6;color:var(--mute)}
+.paper .card p{color:#6A655E}
+.num{font-family:var(--disp);font-weight:800;font-size:13px;color:var(--rojo);letter-spacing:.14em;display:block;margin-bottom:12px}
+
+/* ---------- fotos ---------- */
+.fotos{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:720px){.fotos{grid-template-columns:1.45fr 1fr}}
+.fotos img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.fotos .stack{display:grid;gap:12px;grid-template-rows:1fr 1fr}
+.cap{font-size:13px;color:var(--mute);margin-top:10px}
+
+/* ---------- gráficas ---------- */
+.gfx{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:720px){.gfx{grid-template-columns:repeat(3,1fr);gap:12px}}
+.gfx img{border-radius:10px;border:1px solid #DDD4C9;background:#fff;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
+
+/* ---------- links de informes ---------- */
+.links{display:grid;gap:10px;margin-top:4px}
+.lk{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--card);text-decoration:none;transition:.15s}
+.lk:hover{border-color:var(--rojo);background:#1F1D1B}
+.lk b{font-size:15.5px;font-weight:700}
+.lk span{display:block;font-size:13.5px;color:var(--mute);margin-top:3px;font-weight:500}
+.lk i{font-style:normal;color:var(--rojo);font-weight:700;font-size:18px}
+
+/* ---------- contacto ---------- */
+.cta{background:var(--rojo);color:#fff;border-bottom:none}
+.cta h2{color:#fff}
+.cta .lead{color:#FFE7C9}
+.contact{display:grid;gap:12px;margin-top:30px;grid-template-columns:1fr}
+@media(min-width:720px){.contact{grid-template-columns:repeat(2,1fr)}}
+.ct{display:block;padding:18px 20px;border:1px solid rgba(255,255,255,.34);border-radius:12px;text-decoration:none;color:#fff;background:rgba(0,0,0,.08)}
+.ct:hover{background:#121212;border-color:#121212}
+.ct small{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#FFD6B0;font-weight:700;margin-bottom:5px}
+.ct b{font-size:17px;font-weight:700;word-break:break-word}
+
+footer{padding:34px 0 46px;font-size:13.5px;color:var(--mute);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+footer img{height:30px;width:auto;opacity:.85}
+footer a{color:var(--mute)}
+
+.note{margin-top:30px;padding:18px 20px;border-left:3px solid var(--rojo);background:rgba(229,35,34,.07);border-radius:0 10px 10px 0;font-size:15.5px;line-height:1.6}
+.paper .note{background:rgba(229,35,34,.07)}
+
+ul.tick{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:11px}
+ul.tick li{position:relative;padding-left:26px;font-size:16px;line-height:1.55}
+ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--rojo);border-radius:2px;transform:rotate(45deg)}
+</style>
+</head>
+<body>
+
+<!-- ======================= HERO ======================= -->
+<header class="hero">
+  <div class="hero-img"><img src="media/foto-parrilla.jpg" alt="Daniel Espinoza en la parrilla de partida del GT Challenge de las Américas, Guyana" fetchpriority="high"></div>
+  <div class="hero-in">
+    <div class="wrap">
+      <p class="kicker">Postulación · Comunicador · Tiempo parcial</p>
+      <h1>Daniel<br>Espinoza<span class="dot">.</span></h1>
+      <p class="role">Cobertura de eventos, notas de prensa y estrategia de comunicación.</p>
+      <p class="lead">Mi trabajo son los eventos que no se repiten. Competencias al aire libre, giras internacionales, actos institucionales: lo que no se produce, edita y publica el mismo día, pierde la mitad de su valor.</p>
+      <div class="chips">
+        <span class="chip on">Compatible con medio tiempo</span>
+        <span class="chip">Teletrabajo + presencia mensual en Quito</span>
+        <span class="chip">Inglés B2 · EF, Oxford</span>
+        <span class="chip">Equipo propio en Quito y Guayaquil</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= QUIÉN SOY ======================= -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Quién soy</p>
+      <h2>Un profesional,<br>no una agencia.</h2>
+      <p class="lead">Dirijo Pro Motion Sport Marketing, una operación propia y deliberadamente pequeña: trabajo con pocos clientes y respondo yo mismo por cada entrega. Por eso puedo sostener un proyecto a tiempo parcial sin que sea el relleno de una lista de cuentas.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Más de cuatro años con OX Sport Agency</h3>
+        <p>Agencia quiteña con la que mantengo una relación continua: coberturas de evento en tiempo real, eventos corporativos, piezas institucionales y contenido editorial. Es la razón por la que viajo a Quito todos los meses.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Comunicación de un campeonato internacional</h3>
+        <p>Desde 2026 llevo la comunicación del GT Challenge de las Américas, que en una misma temporada pasó por Panamá, Guyana, Barbados y México, con equipos de varias nacionalidades, autoridades locales y prensa acreditada.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>De la cancha a la estrategia</h3>
+        <p>Empecé como community manager del Club Deportivo Cuenca, produciendo en el campo y en tiempo real. Hoy lo que ofrezco no es solo producción audiovisual: es la estrategia de comunicación y la medición que la sostiene.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Lo que esto significa para el proyecto:</strong> una sola persona responsable de la línea editorial, con capacidad de producción propia detrás, en lugar de un proveedor que rota ejecutivos. Y un modelo de trabajo que ya es remoto: sistemas, reportes y aprobaciones viven en línea desde hace años.
+    </div>
+  </div>
+</section>
+
+<!-- ======================= REQUISITOS ======================= -->
+<section class="paper">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Punto por punto</p>
+      <h2>Lo que piden,<br>lo que traigo.</h2>
+    </div>
+
+    <div class="req">
+      <div class="req-row">
+        <div class="ask">Inglés B1 mínimo</div>
+        <div class="ans"><strong>Certificado B2 de EF Education First (2016)</strong>, tras seis meses de formación en Oxford, Inglaterra. Lo mantengo vigente en terreno: el GT Challenge compite en <em>Barbados</em> y <em>Guyana</em>, países de habla inglesa, donde trato directamente con equipos, pilotos, organizadores y público en inglés. Más abajo hay una pieza mía hablando a cámara en inglés.</div>
+      </div>
+      <div class="req-row">
+        <div class="ask">2 años de experiencia</div>
+        <div class="ans"><strong>Más de cuatro años continuos con OX Sport Agency</strong> y dirección de Pro Motion Sport Marketing desde 2024, después de mi etapa como community manager del Club Deportivo Cuenca. Cobertura de eventos, redacción, producción y estrategia, de forma ininterrumpida.</div>
+      </div>
+      <div class="req-row">
+        <div class="ask">Cooperación internacional (deseable)</div>
+        <div class="ans">Con franqueza: <strong>no vengo de un proyecto de cooperación</strong>, pero sí de operar comunicación en entornos multinacionales y multiactor. Cada fecha del GT Challenge reúne organizadores de un país distinto, equipos de varias nacionalidades, autoridades locales, prensa acreditada y marcas globales — y la comunicación tiene que servirles a todos a la vez, en dos idiomas.</div>
+      </div>
+      <div class="req-row">
+        <div class="ask">Mayormente teletrabajo</div>
+        <div class="ans">Es exactamente como ya trabajo. Planificación, guiones, aprobaciones, reportes y entregas viven en sistemas en línea; la presencia física se reserva para lo que de verdad la exige: la cobertura.</div>
+      </div>
+      <div class="req-row">
+        <div class="ask">De preferencia residir en Quito</div>
+        <div class="ans">Vivo en Cuenca y <strong>viajo a Quito todos los meses</strong> por mi trabajo con OX Sport Agency. Además tengo <strong>equipo propio disponible en Quito y Guayaquil</strong>, con el que ya hemos producido coberturas y piezas con subtitulado. La cobertura en Quito tiene respaldo continuo, no improvisado.</div>
+      </div>
+      <div class="req-row">
+        <div class="ask">Tiempo parcial, compatible con otro trabajo</div>
+        <div class="ans">Es el formato que mejor me calza: gestiono marcas puntuales, no una cartera masiva. Puedo comprometer agenda fija semanal y disponibilidad para coberturas, sin prometer una exclusividad que no existiría.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COBERTURA EN TIEMPO REAL ======================= -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Mi especialidad</p>
+      <h2>Cobertura de eventos<br>en tiempo real.</h2>
+      <p class="lead">Competencias al aire libre que ocurren una sola vez. No hay segunda toma, no hay reprogramación y la ventana de atención dura horas. Todo tiene que producirse, editarse y distribuirse en el menor tiempo posible — y aun así contar algo.</p>
+    </div>
+
+    <div class="gridh">
+      <figure class="v horiz">
+        <div class="vbox">
+          <span class="badge">Guyana</span>
+          <video data-src="media/gt-guyana-resumen.mp4" poster="media/gt-guyana-resumen.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>3ra fecha · South Dakota Circuit</b>
+          <span>Resumen de la fecha de Guyana: producción en pista, edición en destino y publicación dentro del fin de semana de carrera.</span>
+          <a class="ig" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/guyana/" target="_blank" rel="noopener">Ver el informe de la fecha ↗</a>
+        </figcaption>
+      </figure>
+
+      <figure class="v horiz">
+        <div class="vbox">
+          <span class="badge">Barbados</span>
+          <video data-src="media/gt-barbados-resumen.mp4" poster="media/gt-barbados-resumen.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>4ta fecha · Bushy Park Circuit</b>
+          <span>Cobertura íntegra en un país de habla inglesa: coordinación con el circuito, los equipos y la prensa local, y narrativa de destino además de la competencia.</span>
+          <a class="ig" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/barbados/" target="_blank" rel="noopener">Ver el informe de la fecha ↗</a>
+        </figcaption>
+      </figure>
+
+      <figure class="v horiz">
+        <div class="vbox">
+          <span class="badge">México</span>
+          <video data-src="media/gt-mexico-resumen.mp4" poster="media/gt-mexico-resumen.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>5ta fecha · Puebla</b>
+          <span>Semana completa de activaciones, ciudad, transmisión y carrera, resumida en una sola pieza para audiencia general y para marcas.</span>
+          <a class="ig" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/puebla/" target="_blank" rel="noopener">Ver el informe de la fecha ↗</a>
+        </figcaption>
+      </figure>
+    </div>
+
+    <ul class="tick">
+      <li><strong>Deporte outdoor de alta complejidad.</strong> También cubro a <em>Sebastián Merchán</em> (automovilismo, campeón general del GT Challenge 2025) y a <em>Diego Serrano</em> (downhill y rally): disciplinas al aire libre, en montaña o en circuito, donde el clima, la señal y el cronograma cambian sobre la marcha.</li>
+      <li><strong>Ciclo cerrado el mismo día.</strong> Guion previo y shotlist, captura multiperspectiva (cámara principal, acción, onboard, dron con permisos, móvil), edición en destino y publicación coordinada con el calendario del evento.</li>
+      <li><strong>Una pieza, varios públicos.</strong> El mismo material se corta para audiencia general, para prensa y para el informe que después leen las marcas y los aliados.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= A CÁMARA ======================= -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Formato de autor</p>
+      <h2>A cámara,<br>sin intermediarios.</h2>
+      <p class="lead">Desarrollé un formato propio de periodista contemporáneo: hablo directamente a la cámara desde el lugar, mostrando la situación relevante en vez de describirla. Sirve igual para explicar un hito, para presentar una sede o para dar contexto a una audiencia que no estuvo ahí.</p>
+    </div>
+
+    <div class="gridv">
+      <figure class="v vert">
+        <div class="vbox">
+          <span class="badge">En inglés</span>
+          <video data-src="media/autor-ingles.mp4" poster="media/autor-ingles.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>“This historic milestone”</b>
+          <span>Pieza íntegra en inglés, a cámara y con subtitulado, explicando por qué el campeonato llegaba por primera vez a Guyana.</span>
+          <a class="ig" href="https://www.instagram.com/p/DaRKpsoOUFG/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </figcaption>
+      </figure>
+
+      <figure class="v vert">
+        <div class="vbox">
+          <span class="badge">México</span>
+          <video data-src="media/autor-mexico.mp4" poster="media/autor-mexico.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>Presentación de sede · Puebla</b>
+          <span>Crónica en primera persona de la ciudad sede: contexto, ambiente y escenario, grabada y publicada durante la propia semana de carrera.</span>
+          <a class="ig" href="https://www.instagram.com/p/DeAg41WJdkZ/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </figcaption>
+      </figure>
+
+      <figure class="v vert">
+        <div class="vbox">
+          <span class="badge">Barbados</span>
+          <video data-src="media/autor-barbados.mp4" poster="media/autor-barbados.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>Entrevistas y competencia, en inglés</b>
+          <span>Pieza armada con entrevistas a pilotos y acción en pista, subtitulada en inglés para la audiencia caribeña: se entiende con o sin audio.</span>
+          <a class="ig" href="https://www.instagram.com/p/DcXWTpJOOC5/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= EQUIPO EN QUITO ======================= -->
+<section class="paper">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Respaldo en Quito</p>
+      <h2>No llego solo.</h2>
+      <p class="lead">Viajo a Quito todos los meses, y entre viajes hay equipo. Estas tres piezas son de mi trabajo continuo con <strong>OX Sport Agency</strong>: comunicación institucional a cámara, cobertura fuera de la capital y contenido editorial, todas con subtitulado para consumo sin audio.</p>
+    </div>
+
+    <div class="gridv">
+      <figure class="v vert">
+        <div class="vbox">
+          <span class="badge">Institucional</span>
+          <video data-src="media/ox-alianza.mp4" poster="media/ox-alianza.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>Anuncio de alianza institucional</b>
+          <span>Vocería a cámara para comunicar un acuerdo entre organizaciones: mensaje claro, un solo tema por pieza y subtitulado completo.</span>
+          <a class="ig" href="https://www.instagram.com/p/DbD-txYOMOV/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </figcaption>
+      </figure>
+
+      <figure class="v vert">
+        <div class="vbox">
+          <span class="badge">Otra ciudad</span>
+          <video data-src="media/ox-guayaquil.mp4" poster="media/ox-guayaquil.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>Cobertura fuera de la capital</b>
+          <span>Pieza producida en territorio, con el mismo estándar que en Quito. Es el tipo de despliegue que sostiene el equipo cuando el proyecto sale de una sola ciudad.</span>
+          <a class="ig" href="https://www.instagram.com/p/DTknRbZDg3D/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </figcaption>
+      </figure>
+
+      <figure class="v vert">
+        <div class="vbox">
+          <span class="badge">Editorial</span>
+          <video data-src="media/ox-editorial.mp4" poster="media/ox-editorial.jpg" muted loop playsinline preload="none" disablepictureinpicture></video>
+          <button class="snd" type="button" aria-label="Activar o silenciar el sonido">🔇</button>
+        </div>
+        <figcaption>
+          <b>Pieza de posicionamiento</b>
+          <span>Contenido con tesis: abre con una tensión real, da un hallazgo y cierra con una idea utilizable. El mismo criterio que aplico a boletines y discursos.</span>
+          <a class="ig" href="https://www.instagram.com/p/DS3ALgSDsOv/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="note">
+      <strong>Qué cubre el equipo:</strong> grabación y fotografía en Quito y Guayaquil, dron con permisos, entrevistas, edición y subtitulado. Yo mantengo la dirección editorial y la calidad final de cada pieza, esté donde esté.
+    </div>
+  </div>
+</section>
+
+<!-- ======================= REDACCIÓN Y GRÁFICA ======================= -->
+<section class="paper" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Redacción y gráfica</p>
+      <h2>Notas, boletines<br>y piezas que se leen.</h2>
+      <p class="lead">Mi trabajo no termina en el video. Escribo las notas de prensa, los boletines y los textos de vocería, y los traduzco a formatos gráficos de alto impacto: cada resultado, récord o anuncio sale como una pieza que se entiende en dos segundos en un feed y como un texto que un periodista puede usar tal cual.</p>
+    </div>
+
+    <div class="gfx">
+      <img src="media/gfx-1.jpg" alt="Boletín GT News: anuncio de regreso a la cuarta fecha" loading="lazy">
+      <img src="media/gfx-2.jpg" alt="Pieza de resultado: pole position en Barbados" loading="lazy">
+      <img src="media/gfx-3.jpg" alt="Pieza de resultado: récord de pista en Barbados" loading="lazy">
+      <img src="media/gfx-4.jpg" alt="Anuncio de transmisión en vivo desde Puebla" loading="lazy">
+      <img src="media/gfx-5.jpg" alt="Pieza de convocatoria para la fecha de Panamá" loading="lazy">
+      <img src="media/gfx-6.jpg" alt="Presentación de piloto para la final" loading="lazy">
+    </div>
+
+    <ul class="tick">
+      <li><strong>Boletines y notas de prensa</strong> con estructura noticiosa: qué pasó, por qué importa, quién lo dice y qué sigue.</li>
+      <li><strong>Discursos y vocería:</strong> textos escritos para ser dichos, no para ser leídos, con una idea por bloque.</li>
+      <li><strong>Sistema gráfico consistente:</strong> una misma familia visual para resultados, anuncios, convocatorias y transmisiones, de modo que el proyecto se reconozca sin leer el logo.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= ESTRATEGIA E INFORMES ======================= -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Estrategia y visibilidad</p>
+      <h2>Lo que de verdad<br>sé hacer.</h2>
+      <p class="lead">La producción audiovisual es el oficio visible. Lo que sostiene el trabajo es la estrategia de comunicación y marketing digital: decidir qué se cuenta, a quién, en qué orden y cómo se mide. Y después poder demostrarlo.</p>
+    </div>
+
+    <div class="cards" style="margin-bottom:26px">
+      <div class="card">
+        <span class="num">Estrategia</span>
+        <h3>Plan editorial con tesis</h3>
+        <p>Pilares, series, calendario y ganchos. No publicar por publicar: cada pieza responde a un objetivo y a un público definido, y se evalúa contra eso.</p>
+      </div>
+      <div class="card">
+        <span class="num">Medición</span>
+        <h3>Informes que explican, no que decoran</h3>
+        <p>Qué pasó, por qué, qué aprendimos y qué sigue — con periodo, fuente y fórmula declarados. Evidencia de lo entregado, no solo capturas de pantalla.</p>
+      </div>
+      <div class="card">
+        <span class="num">Tecnología</span>
+        <h3>Recursos web propios</h3>
+        <p>Construyo informes, micrositios y herramientas internas directamente en web, apoyándome en inteligencia artificial integrada a mis procesos. Esta misma página es un ejemplo.</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="lk" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/temporada/" target="_blank" rel="noopener">
+        <span><b>Informe general · Temporada 2026</b><span>Visión completa de la temporada del GT Challenge de las Américas: qué se hizo en cada fecha y qué movió la aguja.</span></span><i>↗</i>
+      </a>
+      <a class="lk" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/" target="_blank" rel="noopener">
+        <span><b>Informes por fecha · versión español e inglés</b><span>Panamá, Guyana, Barbados y Puebla. Cada uno con su cobertura, sus activaciones y su lectura de resultados.</span></span><i>↗</i>
+      </a>
+      <a class="lk" href="https://www.youtube.com/watch?v=akcxcGTPXBQ" target="_blank" rel="noopener">
+        <span><b>Podcast · conducción y formato</b><span>También he sido host y he desarrollado podcasts: conducción, estructura de episodio y producción. Este es el primero del GT Challenge.</span></span><i>↗</i>
+      </a>
+      <a class="lk" href="https://promotionec.com/" target="_blank" rel="noopener">
+        <span><b>promotionec.com</b><span>Sitio de Pro Motion Sport Marketing: servicios, método y casos.</span></span><i>↗</i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOTOS ======================= -->
+<section class="tight">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">En terreno</p>
+      <h2>Dónde trabajo.</h2>
+    </div>
+    <div class="fotos">
+      <div>
+        <img src="media/foto-rally360.jpg" alt="Daniel Espinoza grabando con cámara 360 en un tramo de rally">
+        <p class="cap">Cobertura de rally: captura a centímetros del auto, en tramo abierto y con una sola oportunidad.</p>
+      </div>
+      <div class="stack">
+        <img src="media/foto-equipo-barbados.jpg" alt="Equipo organizador del GT Challenge junto a la parrilla completa en Bushy Park, Barbados">
+        <img src="media/foto-horizonte.jpg" alt="Daniel Espinoza con la cámara 360 en locación">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACTO ======================= -->
+<section class="cta">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:0">
+      <p class="kicker" style="color:#FFE7C9">Disponibilidad</p>
+      <h2>Listo para empezar.</h2>
+      <p class="lead">Disponible para incorporarme a tiempo parcial, con agenda semanal fija, teletrabajo como base y presencia en Quito para las coberturas que lo requieran. Mi equipo cubre lo que mi agenda de viaje no alcance.</p>
+    </div>
+
+    <div class="contact">
+      <a class="ct" href="mailto:danielespinozaco@promotionec.com">
+        <small>Correo</small><b>danielespinozaco@promotionec.com</b>
+      </a>
+      <a class="ct" href="https://wa.me/593984678812" target="_blank" rel="noopener">
+        <small>WhatsApp</small><b>+593 98 467 8812</b>
+      </a>
+      <a class="ct" href="https://www.linkedin.com/in/danielespinozacoello/" target="_blank" rel="noopener">
+        <small>LinkedIn</small><b>/in/danielespinozacoello</b>
+      </a>
+      <a class="ct" href="https://www.instagram.com/pro_motion.ec/" target="_blank" rel="noopener">
+        <small>Instagram</small><b>@pro_motion.ec</b>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <img src="media/logo-promotion.png" alt="Pro Motion Sport Marketing">
+    <span>Daniel Espinoza Coello · Cuenca, Ecuador · Noviembre 2026</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video[data-src]'));
+
+  function load(v){
+    if(v.dataset.loaded) return;
+    v.dataset.loaded = '1';
+    v.src = v.dataset.src;
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v = e.target;
+      if(e.isIntersecting){
+        load(v);
+        var p = v.play();
+        if(p && p.catch) p.catch(function(){});
+      } else {
+        if(!v.muted){ v.muted = true; sync(v); }
+        v.pause();
+      }
+    });
+  }, {threshold: 0.35});
+
+  vids.forEach(function(v){ io.observe(v); });
+
+  function sync(v){
+    var b = v.parentNode.querySelector('.snd');
+    if(b) b.textContent = v.muted ? '🔇' : '🔊';
+  }
+
+  document.querySelectorAll('.snd').forEach(function(btn){
+    btn.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var v = btn.parentNode.querySelector('video');
+      if(!v) return;
+      if(v.muted){
+        vids.forEach(function(o){ if(o !== v && !o.muted){ o.muted = true; sync(o); } });
+        load(v);
+        v.muted = false;
+        v.volume = 1;
+        var p = v.play(); if(p && p.catch) p.catch(function(){});
+      } else {
+        v.muted = true;
+      }
+      sync(v);
+    });
+  });
+})();
+</script>
+</body>
+</html>
