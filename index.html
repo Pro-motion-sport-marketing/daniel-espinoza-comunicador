@@ -151,12 +151,114 @@ footer a{color:var(--mute)}
 ul.tick{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:11px}
 ul.tick li{position:relative;padding-left:26px;font-size:16px;line-height:1.55}
 ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--rojo);border-radius:2px;transform:rotate(45deg)}
+
+/* ---------- NAV fija ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(14,14,14,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transform:translateY(-110%);transition:transform .32s cubic-bezier(.4,0,.2,1)}
+.nav.show{transform:none}
+.nav-in{max-width:var(--max);margin:0 auto;padding:0 var(--gut);height:58px;display:flex;align-items:center;gap:18px}
+.nav .me{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.02em;color:#fff;white-space:nowrap;text-decoration:none}
+.nav .me i{font-style:normal;color:var(--rojo)}
+.nav .me s{text-decoration:none}
+@media(max-width:700px){.nav .me s{display:none}.nav-in{gap:12px}}
+.nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;flex:1}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a.n{display:block;white-space:nowrap;font-size:13px;font-weight:700;color:#A9A298;text-decoration:none;padding:7px 11px;border-radius:99px;transition:.15s}
+.nav a.n:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav a.n[aria-current="true"]{color:#fff;background:var(--rojo)}
+.nav .hire{display:none;white-space:nowrap;font-size:13px;font-weight:700;text-decoration:none;color:#fff;border:1px solid #46423D;padding:8px 14px;border-radius:99px}
+.nav .hire:hover{background:#fff;color:#121212;border-color:#fff}
+@media(min-width:1000px){.nav .hire{display:block}}
+section[id]{scroll-margin-top:68px}
+
+/* ---------- Trayectoria ---------- */
+.tl{display:grid;gap:0;margin-top:8px}
+.tl-i{position:relative;padding:26px 0 26px 30px;border-top:1px solid var(--line)}
+.tl-i:first-child{border-top:0;padding-top:4px}
+.tl-i::before{content:"";position:absolute;left:0;top:34px;width:11px;height:11px;border-radius:50%;background:var(--rojo)}
+.tl-i:first-child::before{top:12px;box-shadow:0 0 0 5px rgba(229,35,34,.2)}
+.tl-i::after{content:"";position:absolute;left:5px;top:45px;bottom:-1px;width:1px;background:var(--line)}
+.tl-i:first-child::after{top:23px}
+.tl-i:last-child::after{display:none}
+.tl-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:5px}
+.tl-top h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.when{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rojo);white-space:nowrap}
+.where{font-size:14px;color:var(--mute);margin:0 0 10px}
+.tl-i p{margin:0;font-size:15.5px;line-height:1.6;color:#C9C3BA;max-width:72ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:5px;background:rgba(255,255,255,.055);border:1px solid var(--line);color:#BDB6AC}
+
+/* ---------- Competencias ---------- */
+.skills{display:grid;gap:26px;grid-template-columns:1fr}
+@media(min-width:860px){.skills{grid-template-columns:1.25fr .9fr}}
+.sk-group{margin-bottom:24px}
+.sk-group h4{margin:0 0 11px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rojo)}
+.sk-group .tags .tag{background:#fff;border-color:#DDD4C9;color:#3A3530}
+.langs{display:grid;gap:12px}
+.lang{padding:18px 20px;border:1px solid #DDD4C9;border-radius:12px;background:#fff}
+.lang .lh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:7px}
+.lang b{font-size:17px;font-weight:700}
+.lang .lvl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rojo)}
+.bar{height:6px;border-radius:99px;background:#E0D7CC;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--rojo);border-radius:99px;width:0;transition:width 1.1s cubic-bezier(.22,.8,.3,1)}
+.lang small{display:block;margin-top:9px;font-size:13.5px;line-height:1.5;color:#6A655E}
+
+/* ---------- Informes ---------- */
+.sub{font-size:19px;font-weight:700;letter-spacing:-.01em;margin:4px 0 8px}
+.subp{margin:0 0 24px;max-width:70ch;color:var(--mute);font-size:16px}
+.infos{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:700px){.infos{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.infos{grid-template-columns:repeat(3,1fr)}}
+.inf{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:.18s}
+.inf:hover{border-color:var(--rojo);transform:translateY(-3px)}
+.shot{display:block;background:#0B0B0B;border-bottom:1px solid var(--line);overflow:hidden;aspect-ratio:760/498}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s cubic-bezier(.2,.8,.3,1)}
+.inf:hover .shot img{transform:scale(1.035)}
+.inf-t{display:block;padding:16px 17px 4px;flex:1}
+.inf-t b{display:block;font-size:16px;font-weight:700;line-height:1.3;margin-bottom:7px;color:#fff}
+.inf-t span{display:block;font-size:14.5px;line-height:1.55;color:var(--mute)}
+.go{display:block;padding:12px 17px 17px;font-size:13px;font-weight:700;color:var(--rojo)}
+.inf:hover .go{text-decoration:underline}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .62s cubic-bezier(.2,.7,.3,1),transform .62s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .bar span{transition:none}
+  html{scroll-behavior:auto}
+}
+
+@media print{
+  .nav,.snd,video,.hero-img{display:none!important}
+  body{background:#fff;color:#111}
+  section{page-break-inside:avoid;border-color:#ccc}
+  .hero{min-height:auto;color:#111}
+  .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
+<nav class="nav" id="nav" aria-label="Secciones">
+  <div class="nav-in">
+    <a class="me" href="#top">Daniel<s> Espinoza</s><i>.</i></a>
+    <ul>
+      <li><a class="n" href="#perfil">Perfil</a></li>
+      <li><a class="n" href="#requisitos">Requisitos</a></li>
+      <li><a class="n" href="#trayectoria">Trayectoria</a></li>
+      <li><a class="n" href="#cobertura">Cobertura</a></li>
+      <li><a class="n" href="#camara">A cámara</a></li>
+      <li><a class="n" href="#equipo">Equipo</a></li>
+      <li><a class="n" href="#redaccion">Redacción</a></li>
+      <li><a class="n" href="#informes">Informes</a></li>
+      <li><a class="n" href="#competencias">Competencias</a></li>
+    </ul>
+    <a class="hire" href="#contacto">Contactar</a>
+  </div>
+</nav>
+
 <!-- ======================= HERO ======================= -->
-<header class="hero">
+<header class="hero" id="top">
   <div class="hero-img"><img src="media/foto-parrilla.jpg" alt="Daniel Espinoza en la parrilla de partida del GT Challenge de las Américas, Guyana" fetchpriority="high"></div>
   <div class="hero-in">
     <div class="wrap">
@@ -175,7 +277,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
 </header>
 
 <!-- ======================= QUIÉN SOY ======================= -->
-<section>
+<section id="perfil">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Quién soy</p>
@@ -208,7 +310,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
 </section>
 
 <!-- ======================= REQUISITOS ======================= -->
-<section class="paper">
+<section class="paper" id="requisitos">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Punto por punto</p>
@@ -244,8 +346,63 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
   </div>
 </section>
 
+<!-- ======================= TRAYECTORIA ======================= -->
+<section id="trayectoria">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">Trayectoria</p>
+      <h2>Dónde he<br>hecho esto.</h2>
+      <p class="lead">No es una lista de empleos: es una secuencia de proyectos en los que he sido el responsable de que la comunicación saliera, a tiempo y con criterio.</p>
+    </div>
+
+    <div class="tl">
+      <div class="tl-i rv">
+        <div class="tl-top"><h3>Fundador y director</h3><span class="when">2024 — Actualidad</span></div>
+        <p class="where">Pro Motion Sport Marketing · Cuenca, Ecuador</p>
+        <p>Dirijo la estrategia, la línea editorial y la producción de todos los proyectos de la casa. Diseño los planes de comunicación, escribo los guiones y textos clave, coordino al equipo de producción y respondo por la calidad final de cada entrega. También construyo los informes y micrositios con los que los clientes y sus aliados leen los resultados.</p>
+        <div class="tags"><span class="tag">Estrategia de comunicación</span><span class="tag">Dirección editorial</span><span class="tag">Producción audiovisual</span><span class="tag">Medición e informes</span></div>
+      </div>
+
+      <div class="tl-i rv">
+        <div class="tl-top"><h3>Comunicación, cobertura y producción</h3><span class="when">Más de 4 años · continuo</span></div>
+        <p class="where">OX Sport Agency · Quito, Ecuador</p>
+        <p>Relación continua con una agencia quiteña: coberturas de evento en tiempo real, eventos corporativos, piezas institucionales a cámara y contenido editorial con subtitulado. Es el vínculo por el que viajo a Quito cada mes y por el que sostengo equipo disponible en la capital y en Guayaquil.</p>
+        <div class="tags"><span class="tag">Cobertura en tiempo real</span><span class="tag">Eventos corporativos</span><span class="tag">Vocería institucional</span><span class="tag">Trabajo multiciudad</span></div>
+      </div>
+
+      <div class="tl-i rv">
+        <div class="tl-top"><h3>Responsable de comunicación del campeonato</h3><span class="when">Temporada 2026</span></div>
+        <p class="where">GT Challenge de las Américas · Panamá · Guyana · Barbados · México</p>
+        <p>Comunicación de un campeonato multinacional, fecha por fecha: planificación previa, cobertura en sede, notas y boletines, piezas gráficas de resultados, coordinación con organizadores locales, equipos, prensa acreditada y marcas, y el informe de cada fecha en español e inglés. Cuatro países en una sola temporada, dos de ellos de habla inglesa.</p>
+        <div class="tags"><span class="tag">Entorno multinacional</span><span class="tag">Español e inglés</span><span class="tag">Notas de prensa</span><span class="tag">Informes por fecha</span></div>
+      </div>
+
+      <div class="tl-i rv">
+        <div class="tl-top"><h3>Dirección de contenido e informes de marca</h3><span class="when">2026</span></div>
+        <p class="where">ViCOMER — Thor Kitchen · iGlace · HiHeat</p>
+        <p>Línea editorial, calendario y producción mensual para tres marcas del mismo grupo, con un sistema de informes comparable entre ellas: qué funcionó, qué no, por qué, y qué se hace el mes siguiente. Es el trabajo más parecido a lo que un proyecto necesita para rendir cuentas de forma periódica.</p>
+        <div class="tags"><span class="tag">Plan mensual</span><span class="tag">Informes comparables</span><span class="tag">Varias marcas a la vez</span></div>
+      </div>
+
+      <div class="tl-i rv">
+        <div class="tl-top"><h3>Comunicación de deportistas y marcas</h3><span class="when">Proyectos continuos</span></div>
+        <p class="where">Sebastián Merchán · Diego Serrano · Factory Bike · Recovery · Star Wild · TradeGrow</p>
+        <p>Acompañamiento de perfiles y marcas en disciplinas al aire libre y en sectores no deportivos: identidad, relato, cobertura de competencia y material comercial. Aquí es donde se entrena la cobertura de lo que ocurre una sola vez y no se puede repetir.</p>
+        <div class="tags"><span class="tag">Narrativa</span><span class="tag">Cobertura outdoor</span><span class="tag">Material comercial</span></div>
+      </div>
+
+      <div class="tl-i rv">
+        <div class="tl-top"><h3>Community manager</h3><span class="when">Antes de Pro Motion</span></div>
+        <p class="where">Club Deportivo Cuenca</p>
+        <p>Mi primera escuela: producir en la cancha, en tiempo real y con el partido en curso. Ahí aprendí que las mejores historias pasan en el entrenamiento, no en la oficina — y que publicar tarde es casi igual que no publicar.</p>
+        <div class="tags"><span class="tag">Redes sociales</span><span class="tag">Producción en vivo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ======================= COBERTURA EN TIEMPO REAL ======================= -->
-<section>
+<section id="cobertura">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Mi especialidad</p>
@@ -303,7 +460,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
 </section>
 
 <!-- ======================= A CÁMARA ======================= -->
-<section>
+<section id="camara">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Formato de autor</p>
@@ -355,7 +512,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
 </section>
 
 <!-- ======================= EQUIPO EN QUITO ======================= -->
-<section class="paper">
+<section class="paper" id="equipo">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Respaldo en Quito</p>
@@ -411,7 +568,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
 </section>
 
 <!-- ======================= REDACCIÓN Y GRÁFICA ======================= -->
-<section class="paper" style="padding-top:0">
+<section class="paper" id="redaccion" style="padding-top:0">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Redacción y gráfica</p>
@@ -437,7 +594,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
 </section>
 
 <!-- ======================= ESTRATEGIA E INFORMES ======================= -->
-<section>
+<section id="informes">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Estrategia y visibilidad</p>
@@ -463,19 +620,139 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
       </div>
     </div>
 
-    <div class="links">
-      <a class="lk" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/temporada/" target="_blank" rel="noopener">
-        <span><b>Informe general · Temporada 2026</b><span>Visión completa de la temporada del GT Challenge de las Américas: qué se hizo en cada fecha y qué movió la aguja.</span></span><i>↗</i>
+    <h3 class="sub">Informes que he estructurado · todos públicos, todos en vivo</h3>
+    <p class="subp">No son capturas de pantalla pegadas en un PDF. Son documentos web navegables, con su propia estructura, su lectura de datos y sus recomendaciones, construidos y publicados por mí. Estos cinco se pueden abrir ahora mismo.</p>
+
+    <div class="infos">
+      <a class="inf" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/temporada/" target="_blank" rel="noopener">
+        <span class="shot"><img src="media/inf-gt-temporada.jpg" alt="Informe general de la temporada 2026 del GT Challenge" loading="lazy"></span>
+        <span class="inf-t"><b>GT Challenge · Informe general de temporada</b>
+        <span>Las cinco fechas de 2026 —Panamá, Guyana, Barbados y México— en un solo documento: cobertura, activaciones, medios y lectura de resultados.</span></span>
+        <span class="go">Abrir informe ↗</span>
       </a>
-      <a class="lk" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/" target="_blank" rel="noopener">
-        <span><b>Informes por fecha · versión español e inglés</b><span>Panamá, Guyana, Barbados y Puebla. Cada uno con su cobertura, sus activaciones y su lectura de resultados.</span></span><i>↗</i>
+
+      <a class="inf" href="https://pro-motion-sport-marketing.github.io/gt-challenge-resultados/" target="_blank" rel="noopener">
+        <span class="shot"><img src="media/inf-gt-fechas.jpg" alt="Portada de los informes por fecha del GT Challenge, con selector español e inglés" loading="lazy"></span>
+        <span class="inf-t"><b>GT Challenge · Informes por fecha (ES / EN)</b>
+        <span>Un informe por cada fecha, con versión en español y en inglés. Misma estructura, mismo criterio, adaptado al público de cada país sede.</span></span>
+        <span class="go">Abrir portada ↗</span>
       </a>
+
+      <a class="inf" href="https://pro-motion-sport-marketing.github.io/vicomer-informes/" target="_blank" rel="noopener">
+        <span class="shot"><img src="media/inf-vicomer.jpg" alt="Portada de los informes mensuales de ViCOMER, subdividida por marca" loading="lazy"></span>
+        <span class="inf-t"><b>ViCOMER · Portada mensual por marca</b>
+        <span>Un mismo sistema de informe servido a varias marcas del grupo, subdividido por cada una, con el resumen de cada periodo a la vista desde la portada.</span></span>
+        <span class="go">Abrir portada ↗</span>
+      </a>
+
+      <a class="inf" href="https://pro-motion-sport-marketing.github.io/vicomer-informes/iglace/octubre-2026/" target="_blank" rel="noopener">
+        <span class="shot"><img src="media/inf-iglace.jpg" alt="Informe mensual de redes sociales de iGlace" loading="lazy"></span>
+        <span class="inf-t"><b>iGlace · Informe mensual</b>
+        <span>Navegación lateral, resumen honesto en dos columnas —lo que funciona y lo que hay que mejorar—, métricas por red, análisis de público y plan del mes siguiente.</span></span>
+        <span class="go">Abrir informe ↗</span>
+      </a>
+
+      <a class="inf" href="https://pro-motion-sport-marketing.github.io/vicomer-informes/hiheat/octubre-2026/" target="_blank" rel="noopener">
+        <span class="shot"><img src="media/inf-hiheat.jpg" alt="Informe mensual de redes sociales de HiHeat" loading="lazy"></span>
+        <span class="inf-t"><b>HiHeat · Informe mensual</b>
+        <span>La misma estructura aplicada a otra marca del mismo grupo: comparable mes a mes y entre marcas, descargable en PDF para quien prefiera leerlo así.</span></span>
+        <span class="go">Abrir informe ↗</span>
+      </a>
+    </div>
+
+    <div class="note" style="margin-top:28px">
+      <strong>Por qué esto importa para un proyecto de cooperación:</strong> lo que un proyecto necesita entregar a sus aliados, a su financiador y a la ciudadanía es exactamente esto — evidencia ordenada, legible sin explicación previa, en dos idiomas si hace falta, y accesible desde un enlace en vez de un archivo adjunto de 40 megas.
+    </div>
+
+    <div class="links" style="margin-top:28px">
       <a class="lk" href="https://www.youtube.com/watch?v=akcxcGTPXBQ" target="_blank" rel="noopener">
         <span><b>Podcast · conducción y formato</b><span>También he sido host y he desarrollado podcasts: conducción, estructura de episodio y producción. Este es el primero del GT Challenge.</span></span><i>↗</i>
       </a>
       <a class="lk" href="https://promotionec.com/" target="_blank" rel="noopener">
         <span><b>promotionec.com</b><span>Sitio de Pro Motion Sport Marketing: servicios, método y casos.</span></span><i>↗</i>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COMPETENCIAS ======================= -->
+<section class="paper" id="competencias">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">Competencias, idiomas y formación</p>
+      <h2>Con qué<br>trabajo.</h2>
+    </div>
+
+    <div class="skills">
+      <div class="rv">
+        <div class="sk-group">
+          <h4>Comunicación y redacción</h4>
+          <div class="tags">
+            <span class="tag">Notas de prensa</span><span class="tag">Boletines</span><span class="tag">Discursos y vocería</span>
+            <span class="tag">Guion audiovisual</span><span class="tag">Redacción editorial</span><span class="tag">Relación con prensa</span>
+            <span class="tag">Conducción y podcast</span><span class="tag">Entrevista</span>
+          </div>
+        </div>
+        <div class="sk-group">
+          <h4>Estrategia y visibilidad</h4>
+          <div class="tags">
+            <span class="tag">Plan de comunicación</span><span class="tag">Línea editorial</span><span class="tag">Calendario de contenidos</span>
+            <span class="tag">Marketing digital</span><span class="tag">Gestión de redes</span><span class="tag">Medición y reporte</span>
+            <span class="tag">Campañas y activaciones</span>
+          </div>
+        </div>
+        <div class="sk-group">
+          <h4>Producción</h4>
+          <div class="tags">
+            <span class="tag">Cobertura en tiempo real</span><span class="tag">Dirección de rodaje</span><span class="tag">Cámara y 360</span>
+            <span class="tag">Dron (con permisos)</span><span class="tag">Edición</span><span class="tag">Subtitulado</span>
+            <span class="tag">Fotografía de evento</span><span class="tag">Diseño gráfico de piezas</span>
+          </div>
+        </div>
+        <div class="sk-group">
+          <h4>Herramientas y tecnología</h4>
+          <div class="tags">
+            <span class="tag">Suite Adobe</span><span class="tag">Notion</span><span class="tag">Informes y micrositios web</span>
+            <span class="tag">Inteligencia artificial aplicada</span><span class="tag">Analítica de redes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="sk-group">
+          <h4>Idiomas</h4>
+          <div class="langs">
+            <div class="lang">
+              <div class="lh"><b>Español</b><span class="lvl">Nativo</span></div>
+              <div class="bar"><span data-w="100%"></span></div>
+              <small>Lengua de trabajo y de redacción.</small>
+            </div>
+            <div class="lang">
+              <div class="lh"><b>Inglés</b><span class="lvl">B2 · certificado</span></div>
+              <div class="bar"><span data-w="75%"></span></div>
+              <small>Certificación de EF Education First (2016), tras seis meses de formación en Oxford, Inglaterra. En uso activo: el campeonato que comunico compite en Barbados y Guyana, donde trabajo en inglés con equipos, pilotos, organizadores y prensa.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <h4>Formación y certificación</h4>
+          <div class="langs">
+            <div class="lang">
+              <div class="lh"><b>EF Education First</b><span class="lvl">2016</span></div>
+              <small>Programa intensivo de inglés de seis meses en Oxford, Inglaterra. Certificación de nivel B2.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <h4>Disponibilidad</h4>
+          <div class="tags">
+            <span class="tag">Tiempo parcial</span><span class="tag">Teletrabajo</span><span class="tag">Viaje mensual a Quito</span>
+            <span class="tag">Equipo en Quito y Guayaquil</span><span class="tag">Disponible para viajar</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -501,7 +778,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
 </section>
 
 <!-- ======================= CONTACTO ======================= -->
-<section class="cta">
+<section class="cta" id="contacto">
   <div class="wrap">
     <div class="head" style="margin-bottom:0">
       <p class="kicker" style="color:#FFE7C9">Disponibilidad</p>
@@ -535,6 +812,73 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
 
 <script>
 (function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- aparición progresiva ---------- */
+  var sel = '.head, .card, figure.v, .req-row, .inf, .lk, .note, ul.tick li, .gfx img, .fotos > div, .ct, .tl-i, .sk-group, .sub, .subp';
+  document.querySelectorAll(sel).forEach(function(el){ if(!el.classList.contains('rv')) el.classList.add('rv'); });
+
+  if(reduce){
+    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('.bar span').forEach(function(b){ b.style.width = b.dataset.w; });
+  } else {
+    var rio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el = e.target, d = el.dataset.d ? parseInt(el.dataset.d,10) : 0;
+        setTimeout(function(){ el.classList.add('in'); }, d);
+        rio.unobserve(el);
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+
+    document.querySelectorAll('.gridv, .gridh, .cards, .infos, .req, .gfx, .contact, .links').forEach(function(g){
+      Array.prototype.forEach.call(g.children, function(c,k){
+        var t = c.classList.contains('rv') ? c : c.querySelector('.rv');
+        if(t) t.dataset.d = Math.min(k,5) * 70;
+      });
+    });
+    document.querySelectorAll('.rv').forEach(function(el){ rio.observe(el); });
+
+    var bio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var b = e.target;
+        setTimeout(function(){ b.style.width = b.dataset.w; }, 180);
+        bio.unobserve(b);
+      });
+    }, {threshold:0.5});
+    document.querySelectorAll('.bar span').forEach(function(b){ bio.observe(b); });
+  }
+
+  /* ---------- navegación fija ---------- */
+  var nav = document.getElementById('nav');
+  var hero = document.getElementById('top');
+  if(nav && hero){
+    new IntersectionObserver(function(es){
+      nav.classList.toggle('show', !es[0].isIntersecting);
+    }, {threshold:0, rootMargin:'-70px 0px 0px 0px'}).observe(hero);
+  }
+
+  var links = {};
+  document.querySelectorAll('.nav a.n').forEach(function(a){
+    links[a.getAttribute('href').slice(1)] = a;
+  });
+  var visible = {};
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(e){ visible[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+    var best = null, bv = 0;
+    Object.keys(visible).forEach(function(k){ if(visible[k] > bv){ bv = visible[k]; best = k; } });
+    Object.keys(links).forEach(function(k){
+      if(k === best) links[k].setAttribute('aria-current','true');
+      else links[k].removeAttribute('aria-current');
+    });
+  }, {threshold:[0,.12,.3,.6], rootMargin:'-58px 0px -45% 0px'});
+  Object.keys(links).forEach(function(k){
+    var sec = document.getElementById(k);
+    if(sec) spy.observe(sec);
+  });
+
+  /* ---------- videos ---------- */
   var vids = Array.prototype.slice.call(document.querySelectorAll('video[data-src]'));
 
   function load(v){
@@ -542,8 +886,15 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
     v.dataset.loaded = '1';
     v.src = v.dataset.src;
   }
+  function sync(v){
+    var b = v.parentNode.querySelector('.snd');
+    if(b){
+      b.textContent = v.muted ? '🔇' : '🔊';
+      b.setAttribute('aria-label', v.muted ? 'Activar el sonido' : 'Silenciar');
+    }
+  }
 
-  var io = new IntersectionObserver(function(entries){
+  var vio = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       var v = e.target;
       if(e.isIntersecting){
@@ -557,12 +908,7 @@ ul.tick li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:
     });
   }, {threshold: 0.35});
 
-  vids.forEach(function(v){ io.observe(v); });
-
-  function sync(v){
-    var b = v.parentNode.querySelector('.snd');
-    if(b) b.textContent = v.muted ? '🔇' : '🔊';
-  }
+  vids.forEach(function(v){ vio.observe(v); });
 
   document.querySelectorAll('.snd').forEach(function(btn){
     btn.addEventListener('click', function(ev){
